@@ -35,6 +35,7 @@
     "@media-master/express-crud-router": "^0.0.1",
     "@media-master/express-middleware": "^0.0.1",
     "@media-master/load-dotenv": "^0.0.1",
+    "@media-master/metadata-service-tests": "^0.0.1",
     "chalk": "^5.6.2",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
