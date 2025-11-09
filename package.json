@@ -6,7 +6,7 @@
     "prestart": "pnpm run build",
     "start": "NODE_ENV=production node dist/index.js",
     "dev": "NODE_ENV=development pnpx tsx watch -r tsconfig-paths/register src/index.ts",
-    "test": "NODE_ENV=test vitest --run",
+    "test": "if ls tests 2>/dev/null | grep -q .test.ts; then NODE_ENV=test vitest --run; else echo \"No tests found, skipping...\"; fi",
     "test:ui": "NODE_ENV=test vitest --ui",
     "test:coverage": "NODE_ENV=test vitest run --coverage",
     "lint": "eslint_d src tests",
@@ -32,7 +32,6 @@
     "vitest": "^3.2.4"
   },
   "dependencies": {
-    "@media-master/express-crud-router": "^0.0.1",
     "@media-master/express-middleware": "^0.0.1",
     "@media-master/http-errors": "^0.0.1",
     "@media-master/load-dotenv": "^0.0.1",

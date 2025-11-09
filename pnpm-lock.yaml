@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@media-master/express-crud-router':
-        specifier: ^0.0.1
-        version: 0.0.1
       '@media-master/express-middleware':
         specifier: ^0.0.1
         version: 0.0.1
@@ -361,9 +358,6 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.9':
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
-
-  '@media-master/express-crud-router@0.0.1':
-    resolution: {integrity: sha512-6xQyBpTdtzC299G+KPwAw3odfWFiLAJ1t3IaqvSk/dUypyJiwc9zCoc3Nni9BLnh5VWljXYdtzCSVbG0hBFM6Q==}
 
   '@media-master/express-middleware@0.0.1':
     resolution: {integrity: sha512-qmRKRtOm4LOX37B3w3xUHry4YrFOs0zAfwYf0p5BsWkE9SPaD6NykD4KkfRNIac/z6I1WyaACWu8tf4Ck9OR8w==}
@@ -2180,12 +2174,6 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
-
-  '@media-master/express-crud-router@0.0.1':
-    dependencies:
-      express: 5.1.0
-    transitivePeerDependencies:
-      - supports-color
 
   '@media-master/express-middleware@0.0.1':
     dependencies:

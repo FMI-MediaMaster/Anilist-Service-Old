@@ -1,6 +1,6 @@
 name: Push Docker image to multiple registries
 
-on: 
+on:
   workflow_call:
 
 permissions:
@@ -10,9 +10,9 @@ permissions:
   attestations: write
   id-token: write
 
-jobs: 
+jobs:
   push_to_registries:
-    runs-on: ubuntu-latest    
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
@@ -98,9 +98,9 @@ jobs:
             -H "X-GitHub-Api-Version: 2022-11-28" \
             /orgs/FMI-MediaMaster/packages/container/${{ env.REPO_NAME }}/versions \
             --jq ".[] | select(.metadata.container.tags[]? == \"${{ env.TAG_VERSION }}\") | .html_url")
-          
+
           RELEASE_LINK+="?tag=${{ env.TAG_VERSION }}"
-        
+
           echo "github-link=$RELEASE_LINK" >> $GITHUB_OUTPUT
 
       - name: Get DockerHub link
@@ -121,12 +121,12 @@ jobs:
             ```sh
               docker pull ghcr.io/fmi-mediamaster/${{ env.REPO_NAME }}:${{ env.TAG_VERSION }}
             ```
-            <br />  
-            
+            <br />
+
             **DockerHub**: ${{ steps.dockerhub-link.outputs.dockerhub-link }}
             ```sh
               docker pull mediamasterorg/${{ env.REPO_NAME }}:${{ env.TAG_VERSION }}
             ```
-            <br />  
+            <br />
         env:
           GITHUB_TOKEN: ${{ secrets.GH_RELEASE_TOKEN }}

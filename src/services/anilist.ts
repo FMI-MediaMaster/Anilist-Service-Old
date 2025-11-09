@@ -35,7 +35,7 @@ export default class AnilistService {
     constructor(mediaType: string) {
         if (!['anime', 'manga'].includes(mediaType)) {
             throw errors.notFound(
-                'Invalid endpoint! Use /api/[anime|manga]/[options|info|recommendations]'
+                'Invalid endpoint! Use /[anime|manga]/[options|info|recommendations]'
             );
         }
 
@@ -230,7 +230,7 @@ export default class AnilistService {
 
         if (!(method in methodMap)) {
             throw errors.notFound(
-                'Invalid endpoint! Use /api/[anime|manga]/[options|info|recommendations]'
+                'Invalid endpoint! Use /[anime|manga]/[options|info|recommendations]'
             );
         }
 
