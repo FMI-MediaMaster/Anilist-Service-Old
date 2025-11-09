@@ -41,11 +41,11 @@ export default class AnilistService {
     };
 
     private request = async <T>(query: string): Promise<T | undefined> => {
-        const url = new URL(`https://graphql.anilist.co/`);
+        const url = new URL('https://graphql.anilist.co/');
         const response = await fetch(url, {
             method: 'POST',
             headers: this.headers,
-            body: JSON.stringify({'query': query}),
+            body: JSON.stringify({ 'query': query }),
         });
         if (!response.ok) return undefined;
 
@@ -56,7 +56,7 @@ export default class AnilistService {
         for (const item of this.removeItems) {
             input = input.replaceAll(item, '');
         }
-        
+
         for (const [key, value] of Object.entries(this.replaceItems)) {
             input = input.replaceAll(key, value);
         }
@@ -108,11 +108,11 @@ export default class AnilistService {
         return data?.Page?.media?.map(this.mapSearchResultOptions) ?? [];
     };
 
-    private getInfo = async (id: string): Promise<any[]> => {
+    private getInfo = async (id: string): Promise<[]> => {
         return [];
     }
 
-    private getRecommendations = async (id: string): Promise<any[]> => {
+    private getRecommendations = async (id: string): Promise<MediaOption[]> => {
         const query = `
             query {
                 Media(id: ${id}) {
@@ -153,7 +153,7 @@ export default class AnilistService {
 
         const param = query[method === 'options' ? 'name' : 'id'];
         if (param === undefined) throw errors.badRequest(`Missing parameter for the ${method} endpoint`);
-        
+
         return await methodMap[method](param);
     };
 }

@@ -28,7 +28,7 @@ interface Page {
 };
 
 export interface ResponseBody {
-    data?: Object; 
+    data?: object;
 };
 
 export interface OptionsSearchResponse {

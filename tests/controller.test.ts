@@ -23,6 +23,19 @@ describe('Controller', () => {
                 id: { type: 'number' },
                 name: { type: 'string' },
             },
+            info: {
+                name: { type: 'string' },
+                description: { type: 'string' },
+                release_date: { type: 'string' },
+                genres: { type: 'stringArray' },
+                cover: { type: 'string' },
+                community_score: { type: 'number' },
+                critics_score: { type: 'number' },
+                status: { type: 'string' },
+                links: { type: 'objectArray' },
+                nr_episodes: { type: 'number' },
+                episode_duration: { type: 'number' },
+            },
             recommendations: {
                 id: { type: 'number' },
                 name: { type: 'string' },
@@ -32,7 +45,7 @@ describe('Controller', () => {
         runMetadataTests(
             server,
             endpoint,
-            { validMap, invalidMap, fieldsMap, type: 'anime'}
+            { validMap, invalidMap, fieldsMap, type: 'anime' }
         );
     });
 
@@ -41,7 +54,7 @@ describe('Controller', () => {
         const validMap: object = {
             'Blue Box': '132182',
             'Frieren: Beyond Journey’s End': '118586',
-            'Mayonaka Heart Tune': '169272', 
+            'Mayonaka Heart Tune': '169272',
         };
         const invalidMap: object = {
             'dsadfajd': '-1',
@@ -53,6 +66,19 @@ describe('Controller', () => {
                 id: { type: 'number' },
                 name: { type: 'string' },
             },
+            info: {
+                name: { type: 'string' },
+                description: { type: 'string' },
+                release_date: { type: 'string' },
+                genres: { type: 'stringArray' },
+                cover: { type: 'string' },
+                community_score: { type: 'number' },
+                critics_score: { type: 'number' },
+                status: { type: 'string' },
+                links: { type: 'objectArray' },
+                nr_chapters: { type: 'number' },
+                nr_volumes: { type: 'number' },
+            },
             recommendations: {
                 id: { type: 'number' },
                 name: { type: 'string' },
@@ -62,7 +88,7 @@ describe('Controller', () => {
         runMetadataTests(
             server,
             endpoint,
-            { validMap, invalidMap, fieldsMap, type: 'manga'}
+            { validMap, invalidMap, fieldsMap, type: 'manga' }
         );
     });
 });
