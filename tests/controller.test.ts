@@ -5,18 +5,18 @@ import app from '../src/app';
 
 const server = app as Express;
 
+// Anilist API is currently limited to 30 requests per minute, so we had to reduce the number of tests
+// TODO: Add a delay parameter in the Metadata Package
 describe('Controller', () => {
     describe('Endpoint /api/anime', () => {
         const endpoint: string = '/api/anime';
         const validMap: object = {
             'Inazuma Eleven': '5231',
             'Bakugan Battle Brawlers': '2156',
-            'My Hero Academia': '21459',
         };
         const invalidMap: object = {
             'dsadfajd': '-1',
             '' : 'Inazuma Eleven',
-            'nonExistentAnime': 'nonExistentId',
         };
         const fieldsMap: Record<string, Fields> = {
             options: {
@@ -54,12 +54,10 @@ describe('Controller', () => {
         const validMap: object = {
             'Blue Box': '132182',
             'Frieren: Beyond Journey’s End': '118586',
-            'Mayonaka Heart Tune': '169272',
         };
         const invalidMap: object = {
             'dsadfajd': '-1',
             '' : 'Blue Box',
-            'nonExistentManga1': 'nonExistentId',
         };
         const fieldsMap: Record<string, Fields> = {
             options: {

@@ -1,0 +1,19 @@
+meta {
+  name: Get Options
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{url}}/manga/options?name=Frieren: Beyond Journey’s End
+  body: none
+  auth: inherit
+}
+
+params:query {
+  name: Frieren: Beyond Journey’s End
+}
+
+settings {
+  encodeUrl: true
+}

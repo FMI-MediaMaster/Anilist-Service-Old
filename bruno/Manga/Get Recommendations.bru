@@ -1,0 +1,19 @@
+meta {
+  name: Get Recommendations
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{url}}/manga/recommendations?id=118586
+  body: none
+  auth: inherit
+}
+
+params:query {
+  id: 118586
+}
+
+settings {
+  encodeUrl: true
+}
