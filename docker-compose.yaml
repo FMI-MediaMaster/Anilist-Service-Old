@@ -1,0 +1,17 @@
+services:
+  anilist-service:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: anilist-service:latest
+    hostname: anilist-service.mediamaster.internal
+    container_name: anilist-service.mediamaster.internal
+    volumes:
+      - ./.env:/app/.env:ro
+    networks:
+      - mediamaster-internal-network
+
+networks:
+  mediamaster-internal-network:
+    name: mediamaster-internal-network
